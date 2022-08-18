@@ -26,6 +26,8 @@ namespace LabExc
             {
                 driver = new FirefoxDriver(@"C:\Root\WebDriver");
             }
+
+            //new addeds 
             else
             {
                 driver = new EdgeDriver(@"C:\Root\WebDriver");
