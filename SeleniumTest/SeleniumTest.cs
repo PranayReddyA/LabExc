@@ -11,11 +11,11 @@ namespace LabExc
     public class SeleniumTest
     {
         [DataTestMethod]
-        [DataRow("CH","pranay@google.com","pranay","message")]
-        [DataRow("FF","ashok@google.com","ashok","meg1")] 
-        [DataRow("EDGE","kalyani@google.com","kalyani","ext")] 
+        [DataRow("CH","pranay@google.com","pranay","message","click")]
+        [DataRow("FF","ashok@google.com","ashok","meg1","click")] 
+        [DataRow("EDGE","kalyani@google.com","kalyani","text","click")] 
         // [Ignore]
-        public void TestMethod1(string op1, string op2, string op3, string op4)
+        public void TestMethod1(string op1, string op2, string op3, string op4, string op5)
         {
             IWebDriver driver;
             if (op1 == "CH")
