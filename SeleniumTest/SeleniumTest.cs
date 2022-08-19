@@ -11,11 +11,11 @@ namespace LabExc
     public class SeleniumTest
     {
         [DataTestMethod]
-        [DataRow("CH","pranay@google.com","pranay","message","click")]
-        [DataRow("FF","ashok@google.com","ashok","meg1","click")] 
-        [DataRow("EDGE","kalyani@google.com","kalyani","text","click")] 
+        [DataRow("CH","pranay@google.com","pranay","message")]
+        [DataRow("FF","ashok@google.com","ashok","meg1")] 
+        [DataRow("EDGE","kalyani@google.com","kalyani","text")] 
         // [Ignore]
-        public void TestMethod1(string op1, string op2, string op3, string op4, string op5)
+        public void TestMethod1(string op1, string op2, string op3, string op4)
         {
             IWebDriver driver;
             if (op1 == "CH")
@@ -49,9 +49,15 @@ namespace LabExc
             Message.SendKeys(op4);
             Thread.Sleep(2000);
 
-            IWebElement Close = driver.FindElement(By.ClassName("btn btn-secondary"));
+            IWebElement Close = driver.FindElement(By.XPath("//button[@onClick='send()']/preceding-sibling::button[@type='button']"));
             Close.Click();
             Thread.Sleep(2000);
+
+            // button[text()='Send message']//preceding-sibling::button[text()='Close']
+            //*[@id="exampleModal"]/div/div/div[3]/button[1]
+            //button[@onclick="send()"]/preceding-sibling::button[@type="button"]
+
+
 
             driver.Quit();
         }
